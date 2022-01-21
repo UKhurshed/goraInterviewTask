@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		D341211F2799E00E00C66BA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341211E2799E00E00C66BA2 /* AppDelegate.swift */; };
 		D34121212799E00E00C66BA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34121202799E00E00C66BA2 /* SceneDelegate.swift */; };
-		D34121232799E00E00C66BA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34121222799E00E00C66BA2 /* ViewController.swift */; };
+		D34121232799E00E00C66BA2 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34121222799E00E00C66BA2 /* UserViewController.swift */; };
 		D34121262799E00E00C66BA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34121242799E00E00C66BA2 /* Main.storyboard */; };
 		D34121282799E00F00C66BA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34121272799E00F00C66BA2 /* Assets.xcassets */; };
 		D341212B2799E00F00C66BA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34121292799E00F00C66BA2 /* LaunchScreen.storyboard */; };
+		D3CEFB70279A9B5F00587B95 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEFB6F279A9B5F00587B95 /* User.swift */; };
+		D3CEFB72279AAAE100587B95 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEFB71279AAAE100587B95 /* UserPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D341211B2799E00E00C66BA2 /* goraInterviewTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goraInterviewTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D341211E2799E00E00C66BA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D34121202799E00E00C66BA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D34121222799E00E00C66BA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D34121222799E00E00C66BA2 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		D34121252799E00E00C66BA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D34121272799E00F00C66BA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D341212A2799E00F00C66BA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D341212C2799E00F00C66BA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3CEFB6F279A9B5F00587B95 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D3CEFB71279AAAE100587B95 /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		D341211D2799E00E00C66BA2 /* goraInterviewTask */ = {
 			isa = PBXGroup;
 			children = (
+				D3CEFB6E279A9B0D00587B95 /* Models */,
+				D3CEFB6D279A9B0500587B95 /* Presenter */,
+				D3CEFB6C279A9AFD00587B95 /* Views */,
 				D341211E2799E00E00C66BA2 /* AppDelegate.swift */,
 				D34121202799E00E00C66BA2 /* SceneDelegate.swift */,
-				D34121222799E00E00C66BA2 /* ViewController.swift */,
 				D34121242799E00E00C66BA2 /* Main.storyboard */,
 				D34121272799E00F00C66BA2 /* Assets.xcassets */,
 				D34121292799E00F00C66BA2 /* LaunchScreen.storyboard */,
 				D341212C2799E00F00C66BA2 /* Info.plist */,
 			);
 			path = goraInterviewTask;
+			sourceTree = "<group>";
+		};
+		D3CEFB6C279A9AFD00587B95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D34121222799E00E00C66BA2 /* UserViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3CEFB6D279A9B0500587B95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D3CEFB71279AAAE100587B95 /* UserPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D3CEFB6E279A9B0D00587B95 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3CEFB6F279A9B5F00587B95 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D34121232799E00E00C66BA2 /* ViewController.swift in Sources */,
+				D3CEFB70279A9B5F00587B95 /* User.swift in Sources */,
+				D34121232799E00E00C66BA2 /* UserViewController.swift in Sources */,
 				D341211F2799E00E00C66BA2 /* AppDelegate.swift in Sources */,
+				D3CEFB72279AAAE100587B95 /* UserPresenter.swift in Sources */,
 				D34121212799E00E00C66BA2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

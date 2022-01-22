@@ -13,6 +13,7 @@
 		D34121262799E00E00C66BA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34121242799E00E00C66BA2 /* Main.storyboard */; };
 		D34121282799E00F00C66BA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34121272799E00F00C66BA2 /* Assets.xcassets */; };
 		D341212B2799E00F00C66BA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34121292799E00F00C66BA2 /* LaunchScreen.storyboard */; };
+		D3973316279C015E0066F76A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3973315279C015E0066F76A /* UserService.swift */; };
 		D3CEFB70279A9B5F00587B95 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEFB6F279A9B5F00587B95 /* User.swift */; };
 		D3CEFB72279AAAE100587B95 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEFB71279AAAE100587B95 /* UserPresenter.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		D34121272799E00F00C66BA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D341212A2799E00F00C66BA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D341212C2799E00F00C66BA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3973315279C015E0066F76A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D3CEFB6F279A9B5F00587B95 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D3CEFB71279AAAE100587B95 /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +62,7 @@
 		D341211D2799E00E00C66BA2 /* goraInterviewTask */ = {
 			isa = PBXGroup;
 			children = (
+				D3973314279C01530066F76A /* Services */,
 				D3CEFB6E279A9B0D00587B95 /* Models */,
 				D3CEFB6D279A9B0500587B95 /* Presenter */,
 				D3CEFB6C279A9AFD00587B95 /* Views */,
@@ -71,6 +74,14 @@
 				D341212C2799E00F00C66BA2 /* Info.plist */,
 			);
 			path = goraInterviewTask;
+			sourceTree = "<group>";
+		};
+		D3973314279C01530066F76A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D3973315279C015E0066F76A /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D3CEFB6C279A9AFD00587B95 /* Views */ = {
@@ -170,6 +181,7 @@
 			files = (
 				D3CEFB70279A9B5F00587B95 /* User.swift in Sources */,
 				D34121232799E00E00C66BA2 /* UserViewController.swift in Sources */,
+				D3973316279C015E0066F76A /* UserService.swift in Sources */,
 				D341211F2799E00E00C66BA2 /* AppDelegate.swift in Sources */,
 				D3CEFB72279AAAE100587B95 /* UserPresenter.swift in Sources */,
 				D34121212799E00E00C66BA2 /* SceneDelegate.swift in Sources */,

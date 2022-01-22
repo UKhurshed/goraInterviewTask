@@ -10,20 +10,21 @@ import UIKit
 class UserViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var progress: UIActivityIndicatorView!
     
-    private let presenter = UserPresenter()
-    
-    private var users = [User]()
+    private let presenter = UserPresenter(userService: UserService())
+    private var users = [UserViewData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Users"
         tableView.delegate = self
         tableView.dataSource = self
+        progress.hidesWhenStopped = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "userCell")
         
-        presenter.setViewDelegate(delegate: self)
+        presenter.attachView(self)
         presenter.getUsers()
     }
 
@@ -51,18 +52,38 @@ extension UserViewController: UITableViewDelegate{
 }
 
 extension UserViewController: UserPresenterDelegate{
-    func fetchUsers(users: [User]) {
-        self.users = users
-        
+    
+    func presentAlertError( message: String) {
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.tableView.isHidden = false
+        
+        let alert  = UIAlertController(title: "Error occurred", message: message.description, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
+        
+    }
+    
+    func startLoading() {
+        DispatchQueue.main.async {
+            self.progress.startAnimating()
         }
     }
     
-    func presentAlert(title: String, message: String) {
+    func finishLoading() {
+        DispatchQueue.main.async {
+            self.progress.stopAnimating()
+        }
         
     }
     
+    func fetchUsers(users: [UserViewData]) {
+        self.users = users
+        DispatchQueue.main.async {
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
+    }
     
 }
 

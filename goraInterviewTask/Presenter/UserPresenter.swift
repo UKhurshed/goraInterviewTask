@@ -8,40 +8,49 @@
 import Foundation
 import UIKit
 
-protocol UserPresenterDelegate: AnyObject{
-    func fetchUsers(users: [User])
-    func presentAlert(title: String, message: String)
+struct UserViewData{
+    let name: String
 }
 
-typealias PresenterDelegate = UserPresenterDelegate & UIViewController
+protocol UserPresenterDelegate: AnyObject{
+    func startLoading()
+    func finishLoading()
+    func fetchUsers(users: [UserViewData])
+//    func setEmptyUsers()
+    func presentAlertError(message: String)
+}
+
+//typealias PresenterDelegate = UserPresenterDelegate & UIViewController
 
 class UserPresenter{
-    weak var delegate: PresenterDelegate?
+    weak var delegate: UserPresenterDelegate?
+    let userService: UserService
     
-    public func getUsers(){
-        guard let url  = URL(string: "https://jsonplaceholder.typicode.com/users") else{
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let data = data, error == nil else{
-                debugPrint("Error from data or error=\(String(describing: error))")
-                return
-            }
-            
-            do {
-                let users = try JSONDecoder().decode([User].self, from: data)
-                self?.delegate?.fetchUsers(users: users)
-                
-            }catch let error{
-                debugPrint("Couldn't parse JSON:\(error)")
-                return
-            }
-        }
-        task.resume()
+    init(userService: UserService){
+        self.userService = userService
     }
     
-    public func setViewDelegate(delegate: PresenterDelegate){
-        self.delegate = delegate
+    func attachView(_ userPresenter: UserPresenterDelegate){
+        delegate = userPresenter
+    }
+    
+    func detachView(){
+        delegate = nil
+    }
+    
+    public func getUsers(){
+        self.delegate?.startLoading()
+        userService.getUsers{ [weak self] result in
+        self?.delegate?.finishLoading()
+            switch result{
+            case .success(let users):
+                let mappedUsers = users.map{
+                    return UserViewData(name: $0.name)
+                }
+                self?.delegate?.fetchUsers(users: mappedUsers)
+            case .failure(let error):
+                self?.delegate?.presentAlertError(message: error.localizedDescription )
+            }
+        }
     }
 }

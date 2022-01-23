@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// User structure for response
 struct User: Codable{
     let id: Int
     let name, username, email: String

@@ -54,6 +54,95 @@
             </objects>
             <point key="canvasLocation" x="934.78260869565224" y="60.9375"/>
         </scene>
+        <!--User Photos By Id View Controller-->
+        <scene sceneID="zVq-GF-GKB">
+            <objects>
+                <viewController storyboardIdentifier="photoById" id="Kyr-gR-XgN" customClass="UserPhotosByIdViewController" customModule="goraInterviewTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3eB-GK-M9X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZGl-UN-NxF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photoCell" rowHeight="300" id="1ay-Dd-4Qt" customClass="PhotoTableViewCell" customModule="goraInterviewTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ay-Dd-4Qt" id="W30-Bd-8qd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMW-do-Ft9">
+                                                    <rect key="frame" x="5" y="5" width="404" height="290"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="not_found" translatesAutoresizingMaskIntoConstraints="NO" id="Xyd-lP-JJy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="404" height="236"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="220" id="TR1-GA-c8s"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXs-NB-fFk">
+                                                            <rect key="frame" x="0.0" y="244" width="404" height="46"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="46" id="THe-ZC-ATs"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Xyd-lP-JJy" firstAttribute="leading" secondItem="aMW-do-Ft9" secondAttribute="leading" id="FKe-7D-HCg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vXs-NB-fFk" secondAttribute="bottom" id="XgD-ge-ebO"/>
+                                                        <constraint firstItem="Xyd-lP-JJy" firstAttribute="top" secondItem="aMW-do-Ft9" secondAttribute="top" id="c05-tV-zvK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vXs-NB-fFk" secondAttribute="trailing" id="cqA-lC-9Tx"/>
+                                                        <constraint firstItem="vXs-NB-fFk" firstAttribute="top" secondItem="Xyd-lP-JJy" secondAttribute="bottom" constant="8" symbolic="YES" id="hSo-z9-jcS"/>
+                                                        <constraint firstItem="vXs-NB-fFk" firstAttribute="leading" secondItem="aMW-do-Ft9" secondAttribute="leading" id="nHq-Lr-B9n"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Xyd-lP-JJy" secondAttribute="trailing" id="yKq-zw-R0O"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="aMW-do-Ft9" secondAttribute="bottom" constant="5" id="CiB-YD-HoX"/>
+                                                <constraint firstItem="aMW-do-Ft9" firstAttribute="top" secondItem="W30-Bd-8qd" secondAttribute="top" constant="5" id="E8R-3Y-sDB"/>
+                                                <constraint firstAttribute="trailing" secondItem="aMW-do-Ft9" secondAttribute="trailing" constant="5" id="a9l-yM-BBM"/>
+                                                <constraint firstItem="aMW-do-Ft9" firstAttribute="leading" secondItem="W30-Bd-8qd" secondAttribute="leading" constant="5" id="m6d-z1-qxA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellView" destination="aMW-do-Ft9" id="9Gw-NL-8I4"/>
+                                            <outlet property="photoView" destination="Xyd-lP-JJy" id="koi-dU-Suk"/>
+                                            <outlet property="titleLabel" destination="vXs-NB-fFk" id="7na-kU-hAL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xUe-GS-gt4">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9PY-Zb-STl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xUe-GS-gt4" firstAttribute="centerX" secondItem="3eB-GK-M9X" secondAttribute="centerX" id="G3B-oh-aMt"/>
+                            <constraint firstItem="xUe-GS-gt4" firstAttribute="centerY" secondItem="3eB-GK-M9X" secondAttribute="centerY" id="Tf2-I8-G8Y"/>
+                            <constraint firstItem="ZGl-UN-NxF" firstAttribute="leading" secondItem="9PY-Zb-STl" secondAttribute="leading" id="f8i-Rs-K00"/>
+                            <constraint firstAttribute="bottom" secondItem="ZGl-UN-NxF" secondAttribute="bottom" id="jgc-5G-PUz"/>
+                            <constraint firstItem="ZGl-UN-NxF" firstAttribute="top" secondItem="9PY-Zb-STl" secondAttribute="top" id="kDH-tU-9Kj"/>
+                            <constraint firstItem="ZGl-UN-NxF" firstAttribute="trailing" secondItem="9PY-Zb-STl" secondAttribute="trailing" id="vMg-9C-SaA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoTableView" destination="ZGl-UN-NxF" id="1CZ-D4-33Y"/>
+                        <outlet property="progress" destination="xUe-GS-gt4" id="I1Q-RN-3gD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRU-6c-K9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737.68115942029" y="60.9375"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FH8-nQ-P4Y">
             <objects>
@@ -74,6 +163,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="not_found" width="820" height="430"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

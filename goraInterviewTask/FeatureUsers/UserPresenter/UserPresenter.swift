@@ -8,39 +8,39 @@
 import Foundation
 import UIKit
 
+/// The structure that is needed to display specific fields from response
 struct UserViewData{
     let name: String
 }
 
+/// The main protocol of the presenter
 protocol UserPresenterDelegate: AnyObject{
     func startLoading()
     func finishLoading()
     func fetchUsers(users: [UserViewData])
-//    func setEmptyUsers()
     func presentAlertError(message: String)
 }
 
-//typealias PresenterDelegate = UserPresenterDelegate & UIViewController
-
+/// Implements fetching User 
 class UserPresenter{
     weak var delegate: UserPresenterDelegate?
-    let userService: UserService
     
-    init(userService: UserService){
-        self.userService = userService
-    }
-    
+    /// Initialize protocol
+    /// - Parameter userPresenter: The protocol of UserPresenter
     func attachView(_ userPresenter: UserPresenterDelegate){
         delegate = userPresenter
     }
     
+    
+    /// Detach View and nil protocol
     func detachView(){
         delegate = nil
     }
     
+    /// The function call methods from protocol to fetch Users from API and show to UI
     public func getUsers(){
         self.delegate?.startLoading()
-        userService.getUsers{ [weak self] result in
+        UserService.shared.getUsers{ [weak self] result in
         self?.delegate?.finishLoading()
             switch result{
             case .success(let users):

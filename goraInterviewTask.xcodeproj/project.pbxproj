@@ -13,6 +13,8 @@
 		D34121262799E00E00C66BA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34121242799E00E00C66BA2 /* Main.storyboard */; };
 		D34121282799E00F00C66BA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34121272799E00F00C66BA2 /* Assets.xcassets */; };
 		D341212B2799E00F00C66BA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34121292799E00F00C66BA2 /* LaunchScreen.storyboard */; };
+		D388669E27AAB6E5008094D8 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D388669C27AAB6E5008094D8 /* UserModel.xcdatamodeld */; };
+		D38866A027AB083C008094D8 /* UserCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388669F27AB083C008094D8 /* UserCoreDataManager.swift */; };
 		D3973316279C015E0066F76A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3973315279C015E0066F76A /* UserService.swift */; };
 		D3CEFB70279A9B5F00587B95 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEFB6F279A9B5F00587B95 /* User.swift */; };
 		D3CEFB72279AAAE100587B95 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEFB71279AAAE100587B95 /* UserPresenter.swift */; };
@@ -32,6 +34,8 @@
 		D34121272799E00F00C66BA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D341212A2799E00F00C66BA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D341212C2799E00F00C66BA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D388669D27AAB6E5008094D8 /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		D388669F27AB083C008094D8 /* UserCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreDataManager.swift; sourceTree = "<group>"; };
 		D3973315279C015E0066F76A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D3CEFB6F279A9B5F00587B95 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D3CEFB71279AAAE100587B95 /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				D3E194F0279DD6B700AAAFCC /* UserModel */,
 				D3E194EF279DD6AD00AAAFCC /* UserPresenter */,
 				D3E194EE279DD6A200AAAFCC /* UserService */,
+				D388669C27AAB6E5008094D8 /* UserModel.xcdatamodeld */,
+				D388669F27AB083C008094D8 /* UserCoreDataManager.swift */,
 			);
 			path = FeatureUsers;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 			files = (
 				D3E194D6279D4F7900AAAFCC /* Photo.swift in Sources */,
 				D3E194E4279D5B6D00AAAFCC /* UserPhotosByIdViewController.swift in Sources */,
+				D38866A027AB083C008094D8 /* UserCoreDataManager.swift in Sources */,
+				D388669E27AAB6E5008094D8 /* UserModel.xcdatamodeld in Sources */,
 				D3CEFB70279A9B5F00587B95 /* User.swift in Sources */,
 				D3E194DA279D502300AAAFCC /* PhotoService.swift in Sources */,
 				D3E194EA279D79AB00AAAFCC /* PhotoPresenter.swift in Sources */,
@@ -474,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D388669C27AAB6E5008094D8 /* UserModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D388669D27AAB6E5008094D8 /* UserModel.xcdatamodel */,
+			);
+			currentVersion = D388669D27AAB6E5008094D8 /* UserModel.xcdatamodel */;
+			path = UserModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D34121132799E00E00C66BA2 /* Project object */;
 }

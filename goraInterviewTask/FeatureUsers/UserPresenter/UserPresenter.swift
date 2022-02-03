@@ -40,17 +40,40 @@ class UserPresenter{
     /// The function call methods from protocol to fetch Users from API and show to UI
     public func getUsers(){
         self.delegate?.startLoading()
-        UserService.shared.getUsers{ [weak self] result in
-        self?.delegate?.finishLoading()
-            switch result{
-            case .success(let users):
-                let mappedUsers = users.map{
-                    return UserViewData(name: $0.name)
+        UserCoreDataManager.shared.fetchUserDB(completed: { [weak self] entityResult in
+            self?.delegate?.finishLoading()
+            switch entityResult{
+            case .success(let userEntity):
+                if userEntity.count > 0 {
+                    debugPrint("fetched from DB")
+                    let mappedUsers = userEntity.map{
+                        return UserViewData(name: $0.name ?? "current name")
+                    }
+                    self?.delegate?.fetchUsers(users: mappedUsers)
+                }else{
+                    debugPrint("fetched from API")
+                    self?.fetchUsersFromAPI()
                 }
-                self?.delegate?.fetchUsers(users: mappedUsers)
             case .failure(let error):
-                self?.delegate?.presentAlertError(message: error.localizedDescription )
+                self?.delegate?.presentAlertError(message: error.localizedDescription)
+            }
+        })
+
+    }
+
+    private func fetchUsersFromAPI(){
+            UserService.shared.getUsers{ [weak self] result in
+            self?.delegate?.finishLoading()
+                switch result{
+                case .success(let users):
+                    let mappedUsers = users.map{
+                        return UserViewData(name: $0.name)
+                    }
+                    UserCoreDataManager.shared.createUser(userNames: mappedUsers)
+                    self?.delegate?.fetchUsers(users: mappedUsers)
+                case .failure(let error):
+                    self?.delegate?.presentAlertError(message: error.localizedDescription )
+                }
             }
         }
-    }
 }

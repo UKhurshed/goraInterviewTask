@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 /// ViewController of User
 class UserViewController: UIViewController {
@@ -20,6 +21,10 @@ class UserViewController: UIViewController {
     /// Request response: List of UserViewData
     private var users = [UserViewData]()
     
+    var fetchResultController: NSFetchedResultsController<UserEntity>!
+    
+    var userCoreDataManager = UserCoreDataManager()
+    
     /// Life cycle method
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,14 @@ class UserViewController: UIViewController {
         
         presenter.attachView(self)
         presenter.getUsers()
+        
+        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: userCoreDataManager.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        try? fetchResultController.performFetch()
     }
 
 }

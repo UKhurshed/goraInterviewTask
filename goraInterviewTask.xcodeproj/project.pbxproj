@@ -23,6 +23,8 @@
 		D3E194E4279D5B6D00AAAFCC /* UserPhotosByIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E194E3279D5B6D00AAAFCC /* UserPhotosByIdViewController.swift */; };
 		D3E194EA279D79AB00AAAFCC /* PhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E194E9279D79AB00AAAFCC /* PhotoPresenter.swift */; };
 		D3E194EC279D7B8B00AAAFCC /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E194EB279D7B8B00AAAFCC /* PhotoTableViewCell.swift */; };
+		D3E9FC0327ABB49F00F8952B /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9FC0127ABB49F00F8952B /* UserEntity+CoreDataClass.swift */; };
+		D3E9FC0427ABB49F00F8952B /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9FC0227ABB49F00F8952B /* UserEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		D3E194E3279D5B6D00AAAFCC /* UserPhotosByIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotosByIdViewController.swift; sourceTree = "<group>"; };
 		D3E194E9279D79AB00AAAFCC /* PhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPresenter.swift; sourceTree = "<group>"; };
 		D3E194EB279D7B8B00AAAFCC /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		D3E9FC0127ABB49F00F8952B /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3E9FC0227ABB49F00F8952B /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		D3E194F0279DD6B700AAAFCC /* UserModel */ = {
 			isa = PBXGroup;
 			children = (
+				D3E9FC0527ABB4AE00F8952B /* UserCoreDataModel */,
 				D3CEFB6F279A9B5F00587B95 /* User.swift */,
 			);
 			path = UserModel;
@@ -175,6 +180,15 @@
 				D3973314279C01530066F76A /* UsePhotoService */,
 			);
 			path = FeatureUserPhotoById;
+			sourceTree = "<group>";
+		};
+		D3E9FC0527ABB4AE00F8952B /* UserCoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				D3E9FC0127ABB49F00F8952B /* UserEntity+CoreDataClass.swift */,
+				D3E9FC0227ABB49F00F8952B /* UserEntity+CoreDataProperties.swift */,
+			);
+			path = UserCoreDataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,11 +269,13 @@
 				D3CEFB70279A9B5F00587B95 /* User.swift in Sources */,
 				D3E194DA279D502300AAAFCC /* PhotoService.swift in Sources */,
 				D3E194EA279D79AB00AAAFCC /* PhotoPresenter.swift in Sources */,
+				D3E9FC0327ABB49F00F8952B /* UserEntity+CoreDataClass.swift in Sources */,
 				D34121232799E00E00C66BA2 /* UserViewController.swift in Sources */,
 				D3973316279C015E0066F76A /* UserService.swift in Sources */,
 				D341211F2799E00E00C66BA2 /* AppDelegate.swift in Sources */,
 				D3CEFB72279AAAE100587B95 /* UserPresenter.swift in Sources */,
 				D3E194EC279D7B8B00AAAFCC /* PhotoTableViewCell.swift in Sources */,
+				D3E9FC0427ABB49F00F8952B /* UserEntity+CoreDataProperties.swift in Sources */,
 				D34121212799E00E00C66BA2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
